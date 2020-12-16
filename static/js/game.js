@@ -18,6 +18,9 @@ jQuery(document).ready(function() {
         questionWrapper.append(answersHTML);
         questionWrapper.append('<div class="description"></div>');
 
+        if (currentQuestion == 14 || currentQuestion == 15)
+            $(".question-wrapper .answers").css("font-size", "1.1rem");
+
         $(".question-wrapper .button").click(function() {
             if (answersLocked)
                 return;
