@@ -60,11 +60,24 @@
                 </tbody>
             </table>
             <div class="question-wrapper"><div class="close-button" style="display: none"></div></div>
+            <div style="display: none">
+                <div data-statistics="score">{{ average_score }}</div>
+                {% for statistic in answers_statistics %}
+                    <div data-statistics="question">
+                        <span>Question number: {{ statistic.question_number }}</span>
+                        <span>All count: {{ statistic.all_count }}</span>
+                        <span>Correct count: {{ statistic.correct_count }}</span>
+                    </div>
+                {% endfor %}
+            </div>
         </div>
     </div>
     <script type="text/javascript" src="{% static 'js/vendor/jquery-3.3.1.min.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/vendor/jquery.easing.1.3.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/base/ajax-setup.js' %}"></script>
     <script type="text/javascript" src="{% static 'js/game.js' %}"></script>
+    {% if show_statistics %}
+        <script type="text/javascript" src="{% static 'js/statistics.js' %}"></script>
+    {% endif %}
 </body>
 </html>

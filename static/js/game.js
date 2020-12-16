@@ -42,6 +42,13 @@ jQuery(document).ready(function() {
                 var audio = new Audio("/static/audio/win.mp3");
                 audio.play();
             }
+
+            $.ajax({
+                type: 'POST',
+                url: '/question-answer/',
+                data: {'question_index': currentQuestion, "correct_answer": response["correct_answer"], "user_answer": btn.data("number")},
+            });
+
             scoreAnimationTimer = setInterval(() => {
                 if (score == targetScore) {
                     clearInterval(scoreAnimationTimer);
