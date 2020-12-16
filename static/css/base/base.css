@@ -1,0 +1,67 @@
+html {
+    font-size: 10px;
+}
+
+html * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    background-image: url("/static/img/background.jpg");
+    position: relative;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.btn {
+    display: flex;
+    overflow: hidden;
+    margin: 10px;
+    padding: 12px 12px;
+    cursor: pointer;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+    transition: all 150ms;
+    text-align: center;
+    white-space: nowrap;
+    text-decoration: none !important;
+    text-transform: none;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.3rem;
+    font-weight: 500;
+    line-height: 1.3rem;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    justify-content: center;
+    align-items: center;
+    flex: 0 0 160px;
+    -ms-flex: 0 0 130px;
+    box-shadow: 2px 5px 10px #e4e4e4;
+    transition: opacity 150ms;
+}
+.btn:hover {
+    opacity: .85;
+}
+.btn:focus {
+    outline: none;
+}
+.btn:active {
+    border: 3px solid #b18f41!important;
+}
