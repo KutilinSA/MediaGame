@@ -101,7 +101,7 @@ jQuery(document).ready(function() {
         $(".question-wrapper *:not(.close-button)").remove();
         $(".question-wrapper").removeClass("opened");
 
-        if ($(".column:not(.completed").length == 0) {
+        if ($(".column:not(.category):not(.completed)").length == 0) {
             setTimeout(() => {
                 $(".question-wrapper").addClass("opened");
                 setTimeout(() => {
