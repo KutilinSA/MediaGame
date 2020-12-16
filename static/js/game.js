@@ -33,10 +33,14 @@ jQuery(document).ready(function() {
                 btn.addClass("incorrect");
                 targetScore = score - currentQuestionScore;
                 $('.column[data-number="' + currentQuestion + '"]').addClass("incorrect");
+                var audio = new Audio("/static/audio/lose.mp3");
+                audio.play();
             }
             else {
                 targetScore = score + currentQuestionScore;
                 $('.column[data-number="' + currentQuestion + '"]').addClass("correct");
+                var audio = new Audio("/static/audio/win.mp3");
+                audio.play();
             }
             scoreAnimationTimer = setInterval(() => {
                 if (score == targetScore) {
@@ -84,6 +88,8 @@ jQuery(document).ready(function() {
             {
                 $(".question-wrapper").addClass("opened");
                 var currentQuestionScore = ((questionIndex - 1) % 3) * 100 + 100;
+                var audio = new Audio("/static/audio/question.mp3");
+                audio.play();
                 setTimeout(() => { showQuestion(response, questionIndex, currentQuestionScore); }, 1000);
             },
             complete: function() {
@@ -105,6 +111,12 @@ jQuery(document).ready(function() {
             setTimeout(() => {
                 $(".question-wrapper").addClass("opened");
                 setTimeout(() => {
+                    var audio = null;
+                    if (score < 300)
+                        audio = new Audio("/static/audio/game-ended-bad.mp3");
+                    else
+                        audio = new Audio("/static/audio/game-ended.mp3");
+                    audio.play();
                     $(".question-wrapper").addClass("game-ended");
                     $(".question-wrapper").append("<h1>Game Ended!</h1>");
                     $(".question-wrapper").append("<h2>Your score: " + score + "</h2>");
@@ -112,4 +124,14 @@ jQuery(document).ready(function() {
             }, 3000);
         }
     });
+
+    $(".question-wrapper .close-button").click(function() {
+        var audio = new Audio("/static/audio/click.mp3");
+        audio.play();
+    });
 });
+
+function playHover(event) {
+    var audio = new Audio("/static/audio/hover.mp3");
+    audio.play();
+};
