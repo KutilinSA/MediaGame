@@ -125,8 +125,17 @@ jQuery(document).ready(function() {
                         audio = new Audio("/static/audio/game-ended.mp3");
                     audio.play();
                     $(".question-wrapper").addClass("game-ended");
-                    $(".question-wrapper").append("<h1>Game Ended!</h1>");
-                    $(".question-wrapper").append("<h2>Your score: " + score + "</h2>");
+                    $(".question-wrapper").append("<h1>Игра окончена!</h1>");
+                    $(".question-wrapper").append("<h2>Ваши очки: " + score + "</h2>");
+                    if (score > 2300) {
+                        $(".question-wrapper").append('<h2 class="desc">Вот это результаты! Ты случайно не тайный агент Meduzы? Или тебя подослал Тасс?</h2>');
+                    }
+                    else if (score > 1000) {
+                        $(".question-wrapper").append('<h2 class="desc">Вау, да ты почти настоящий профи, много же статей ты перечитал, друг?</h2>');
+                    }
+                    else {
+                        $(".question-wrapper").append('<h2 class="desc">Не всем нам быть журналистами и разбираться что к чему, главное, чтоб интересно, ведь так?</h2>');
+                    }
                 }, 1000);
             }, 3000);
         }
