@@ -102,7 +102,7 @@ jQuery(document).ready(function() {
             setTimeout(() => {
                 $(".question-wrapper").addClass("opened");
                 setTimeout(() => {
-                    $(".question-wrapper").addClass("game-endedqwe");
+                    $(".question-wrapper").addClass("game-ended");
                     $(".question-wrapper").append("<h1>Game Ended!</h1>");
                     $(".question-wrapper").append("<h2>Your score: " + score + "</h2>");
                 }, 1000);
