@@ -24,10 +24,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = '12ursz+-t@8(n#h!80hu=!#(@am-ts!p0nc5q_klz9_v6iraiq'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 if not DEBUG:
-    ALLOWED_HOSTS = ['kutilinsa.pythonanywhere.com']
+    ALLOWED_HOSTS = ['mediaproject.pythonanywhere.com']
 
 
 # Application definition
